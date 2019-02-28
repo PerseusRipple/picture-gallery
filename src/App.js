@@ -16,7 +16,6 @@ class App extends Component {
             <Route exact path="/" component={CategoryList} />
             <Route exact path="/:category" component={PhotoList} />
 
-            <Route exact path="/:category" component={PhotoList} />
             {/* <Route exact path="/PhotoList" component={PhotoList} />
             <Route exact path="/PhotoDetail" component={PhotoDetail} />
             <Route component={ErrorPage404} /> */}
