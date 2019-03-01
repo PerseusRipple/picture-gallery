@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-
+ import { Link } from "react-router-dom";
 import hobbies from "../data/hobbies.json";
 
 class PhotoDetail extends Component {
   render() {
+    const currentHobby = hobbies[this.props.match.params.hobby];
+//     console.log(this.props.match.param);
+// console.log(currentHobby)
+//     return (
+
     return <div>this is my photo detail</div>;
     <main>
       <main>
@@ -22,10 +26,7 @@ class PhotoDetail extends Component {
   }
 }
 
-// const currentHobby = hobbies[this.props.match.params.hobby];
-//     console.log(this.props.match.param);
-// console.log(currentHobby)
-//     return (
+// 
 //       < Photo
 
 //     )

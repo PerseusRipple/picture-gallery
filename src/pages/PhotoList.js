@@ -20,19 +20,22 @@ class PhotoList extends Component {
           <section>Home</section>
         </main>
         <section>
-          <header>Pandas</header>
-          <p>Something goes here...</p>
+          <header>{currentHobby.title}</header>
+          <p>{currentHobby.description}</p>
           <section>
-            <img> </img>
-            <img> </img>
-            <img> </img>
+            {currentHobby.photos.map((photo, index) => {
+              console.log(photo);
+              return (
+                <Link
+                  key={index}
+                  to={`/${this.props.match.params.hobby}/${index}`}
+                >
+                  <img src={photo.imageURL} alt={image} />
+                </Link>
+              );
+            })}
           </section>
         </section>
-        this is the photo list {this.props.match.params.hobby}
-        {currentHobby.photos.map((photo, index) => {
-          console.log(photo, index);
-          return <img key={index} src="photo.imageURL" alt="image" />;
-        })}
       </>
     );
   }
