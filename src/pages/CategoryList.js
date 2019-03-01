@@ -1,22 +1,37 @@
 import React, { Component } from "react";
-import PhotoDetail from "./PhotoDetail";
+// import PhotoDetail from "./PhotoDetail";
 import { Link } from "react-router-dom";
 
-import data from "../data/json.json";
+import hobbies from "../data/hobbies.json";
 
 class CategoryList extends Component {
   render() {
-    console.log(Object.keys(data));
+    console.log(Object.keys(hobbies));
     return (
-      <main>
-        {Object.keys(data).map(category => {
-          return (
-            <section>
-              <Link to={"/" + category}>{category}</Link>
-            </section>
-          );
-        })}
-      </main>
+      <>
+        <main>
+          <header>
+            <h1>Things I Like</h1>
+            <h2>A Photo Gallery By Jason Perry</h2>
+          </header>
+        </main>
+        <section>Home</section>
+        <section className="hobbies">
+          {Object.keys(hobbies).map((hobby, i) => {
+            console.log("the hobby" + hobby);
+            console.log("the hobby object:", hobbies[hobby]);
+            return (
+              <section key={i} className="hobby">
+                <header>
+                  <Link to={`/${hobby}`}>{hobbies[hobby].title}</Link>
+                </header>
+                <p>{hobbies[hobby].description}</p>
+                <img src={hobbies[hobby].photo[0].imageURL} />
+              </section>
+            );
+          })}
+        </section>
+      </>
     );
   }
 }
